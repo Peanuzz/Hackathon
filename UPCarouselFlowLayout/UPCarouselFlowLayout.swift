@@ -9,7 +9,7 @@ public enum UPCarouselFlowLayoutSpacingMode {
 
 open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
     
-    fileprivate struct LayoutState {
+    private struct LayoutState {
         var size: CGSize
         var direction: UICollectionView.ScrollDirection
         func isEqual(_ otherState: LayoutState) -> Bool {
@@ -20,9 +20,9 @@ open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
     @IBInspectable open var sideItemScale: CGFloat = 0.6
     @IBInspectable open var sideItemAlpha: CGFloat = 0.6
     @IBInspectable open var sideItemShift: CGFloat = 0.0
-    open var spacingMode = UPCarouselFlowLayoutSpacingMode.fixed(spacing: 40)
+    open var spacingMode = UPCarouselFlowLayoutSpacingMode.fixed(spacing: 30)
     
-    fileprivate var state = LayoutState(size: CGSize.zero, direction: .horizontal)
+    private var state = LayoutState(size: CGSize.zero, direction: .horizontal)
     
     
     override open func prepare() {
@@ -36,14 +36,14 @@ open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
         }
     }
     
-    fileprivate func setupCollectionView() {
+    private func setupCollectionView() {
         guard let collectionView = self.collectionView else { return }
         if collectionView.decelerationRate != UIScrollView.DecelerationRate.fast {
             collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         }
     }
     
-    fileprivate func updateLayout() {
+    private func updateLayout() {
         guard let collectionView = self.collectionView else { return }
         
         let collectionSize = collectionView.bounds.size
@@ -76,7 +76,7 @@ open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
         return attributes.map({ self.transformLayoutAttributes($0) })
     }
     
-    fileprivate func transformLayoutAttributes(_ attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+    private func transformLayoutAttributes(_ attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let collectionView = self.collectionView else { return attributes }
         let isHorizontal = (self.scrollDirection == .horizontal)
         

@@ -70,13 +70,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     self.itemsMRT = self.createItemsMRT()
     self.itemsBTS = self.createItemsBTS()
     self.currentPage = 0
+    
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.rotationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     
   }
   
   private func setupLayout() {
-    let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
-    layout.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 30)
+    let layout = UPCarouselFlowLayout()
+    layout.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 50)
+    layout.itemSize = CGSize(width: 300, height: 200)
+    collectionView.collectionViewLayout = layout
   }
   
   private func createItems() -> [Character] {
