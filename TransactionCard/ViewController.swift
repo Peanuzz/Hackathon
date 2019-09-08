@@ -92,22 +92,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   
   private func createItemsMRT() -> [MRTModel] {
     let mrtDetails = [
-      MRTModel(imageIcon: "mrticon", name: "MRT", date: "20/10/19", time: "01.30 PM", income: 1000),
-      MRTModel(imageIcon: "mrticon", name: "MRT", date: "20/10/19", time: "9.30 PM", income: 100),
-      MRTModel(imageIcon: "mrticon", name: "MRT", date: "20/10/19", time: "03.30 PM", income: 300),
-      MRTModel(imageIcon: "mrticon", name: "MRT", date: "20/10/19", time: "08.30 AM", income: 400),
-      MRTModel(imageIcon: "mrticon", name: "MRT", date: "20/10/19", time: "7.30 PM", income: 500)
+      MRTModel(imageIcon: "mrt-icon", name: "MRT", date: "20/10/19", time: "01.30 PM", income: 1000),
+      MRTModel(imageIcon: "mrt-icon", name: "MRT", date: "20/10/19", time: "9.30 PM", income: 100),
+      MRTModel(imageIcon: "mrt-icon", name: "MRT", date: "20/10/19", time: "03.30 PM", income: 300),
+      MRTModel(imageIcon: "mrt-icon", name: "MRT", date: "20/10/19", time: "08.30 AM", income: 400),
+      MRTModel(imageIcon: "mrt-icon", name: "MRT", date: "20/10/19", time: "7.30 PM", income: 500)
     ]
     return mrtDetails
   }
   
   private func createItemsBTS() -> [BTSModel] {
     let btsDetails = [
-      BTSModel(imageIcon: "btsicon", name: "BTS", date: "20/10/19", time: "06.30 AM", income: 200),
-      BTSModel(imageIcon: "btsicon", name: "BTS", date: "20/10/19", time: "09.30 PM", income: 500),
-      BTSModel(imageIcon: "btsicon", name: "BTS", date: "20/10/19", time: "10.30 AM", income: 100),
-      BTSModel(imageIcon: "btsicon", name: "BTS", date: "20/10/19", time: "03.30 PM", income: 150),
-      BTSModel(imageIcon: "btsicon", name: "BTS", date: "20/10/19", time: "11.30 AM", income: 400)
+      BTSModel(imageIcon: "bts-icon", name: "BTS", date: "20/10/19", time: "06.30 AM", income: 200),
+      BTSModel(imageIcon: "bts-icon", name: "BTS", date: "20/10/19", time: "09.30 PM", income: 500),
+      BTSModel(imageIcon: "bts-icon", name: "BTS", date: "20/10/19", time: "10.30 AM", income: 100),
+      BTSModel(imageIcon: "bts-icon", name: "BTS", date: "20/10/19", time: "03.30 PM", income: 150),
+      BTSModel(imageIcon: "bts-icon", name: "BTS", date: "20/10/19", time: "11.30 AM", income: 400)
     ]
     return btsDetails
   }
@@ -177,7 +177,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       items.append(contentsOf: characters)
       count += 1
     } else if count % 2 == 1 {
-      let characters = [Character(imageName: "mrt1", name: "mrt", balance: 1000, type: .card)]
+      let characters = [Character(imageName: "mrt", name: "mrt", balance: 1000, type: .card)]
       items.append(contentsOf: characters)
       count += 1
     }

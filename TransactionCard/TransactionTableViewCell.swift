@@ -12,7 +12,6 @@ class TransactionTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-      self.imageCard.layer.cornerRadius = self.imageCard.frame.width / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,7 +24,7 @@ class TransactionTableViewCell: UITableViewCell {
     dateLabel.text = items.date
     timeLabel.text = items.time
     incomeLabel.text = "+$\(items.income)"
-//    imageCard.image = UIImage(named: items.imageIcon)
+    imageCard.image = UIImage(named: items.imageIcon)
   }
   
   func configCellBTS(items: BTSModel) {
@@ -33,8 +32,7 @@ class TransactionTableViewCell: UITableViewCell {
     dateLabel.text = items.date
     timeLabel.text = items.time
     incomeLabel.text = "+$\(items.income)"
-//    imageCard.image = UIImage(named: items.imageIcon)
+    imageCard.image = UIImage(named: items.imageIcon)
   }
-
-
 }
+

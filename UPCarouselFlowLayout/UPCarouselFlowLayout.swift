@@ -1,6 +1,5 @@
 import UIKit
 
-
 public enum UPCarouselFlowLayoutSpacingMode {
     case fixed(spacing: CGFloat)
     case overlap(visibleOffset: CGFloat)
@@ -103,7 +102,8 @@ open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
         
         return attributes
     }
-    
+  
+  // When slide card , choose show one target
     override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = collectionView , !collectionView.isPagingEnabled,
             let layoutAttributes = self.layoutAttributesForElements(in: collectionView.bounds)
